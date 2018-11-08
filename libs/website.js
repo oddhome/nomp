@@ -232,6 +232,7 @@ module.exports = function(logger){
 
     var app = express();
 
+    
 
     app.use(bodyParser.json());
 
@@ -270,8 +271,11 @@ module.exports = function(logger){
 
     });
 
+
     app.use(compress());
     app.use('/static', express.static('website/static'));
+    app.use('/assets', express.static('website/assets'));
+
 
     app.use(function(err, req, res, next){
         console.error(err.stack);
