@@ -1,0 +1,6 @@
+{
+    "name": "Mobit Global",
+    "symbol": "MBGL",
+    "algorithm": "skunk",
+    "peerMagic": "d12e1ee6" //optional
+}
