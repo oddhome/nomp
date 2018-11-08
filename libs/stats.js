@@ -218,11 +218,14 @@ module.exports = function(logger, portalConfig, poolConfigs){
                     portalStats.algos[algo] = {
                         workers: 0,
                         hashrate: 0,
-                        hashrateString: null
+                        hashrateString: null,
+                        blocks: 0,  // Add by Oddhome
                     };
                 }
                 portalStats.algos[algo].hashrate += coinStats.hashrate;
                 portalStats.algos[algo].workers += Object.keys(coinStats.workers).length;
+                //Add by Oddhome
+                portalStats.algos[algo].blocks += coinStats.blocks.pending + coinStats.blocks.confirmed;
 
                 for (var worker in coinStats.workers) {
                     coinStats.workers[worker].hashrateString = _this.getReadableHashRateString(shareMultiplier * coinStats.workers[worker].shares / portalConfig.website.stats.hashrateWindow);
