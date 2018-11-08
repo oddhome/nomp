@@ -3,6 +3,7 @@ var redis   = require('redis');
 var net     = require('net');
 
 var MposCompatibility = require('./mposCompatibility.js');
+var yiimpCompatibility = require('./yiimpCompatibility.js');
 var ShareProcessor = require('./shareProcessor.js');
 
 module.exports = function(logger){
@@ -122,6 +123,23 @@ module.exports = function(logger){
 
             handlers.diff = function(workerName, diff){
                 mposCompat.handleDifficultyUpdate(workerName, diff);
+            }
+        } 
+
+        //Functions required for YIIMP compatibility
+        else if (poolOptions.yiimpMode && poolOptions.yiimpMode.enabled){
+            var yiimpCompat = new yiimpCompatibility(logger, poolOptions);
+
+            handlers.auth = function(port, workerName, password, authCallback){
+                yiimpCompat.handleAuth(workerName, password, authCallback);
+            };
+
+            handlers.share = function(isValidShare, isValidBlock, data){
+                yiimpCompat.handleShare(isValidShare, isValidBlock, data);
+            };
+
+            handlers.diff = function(workerName, diff){
+                yiimpCompat.handleDifficultyUpdate(workerName, diff);
             }
         } 
 
