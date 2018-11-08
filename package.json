@@ -12,9 +12,9 @@
         "litecoin",
         "scrypt"
     ],
-    "homepage": "https://github.com/Hdactech/nomp",
+    "homepage": "https://github.com/oddhome/nomp",
     "bugs": {
-        "url": "https://github.com/Hdactech/nomp/issues"
+        "url": "https://github.com/oddhome/nomp/issues"
     },
     "license": "GPL-2.0",
     "author": "Matthew Little",
@@ -29,7 +29,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Hdactech/nomp.git"
+        "url": "https://github.com/oddhome/nomp.git"
     },
     "dependencies": {
         "async": "^2.5.0",
@@ -46,7 +46,7 @@
         "nonce": "^1.0.4",
         "redis": "^2.7.1",
         "request": "^2.83.0",
-        "stratum-pool": "git://github.com/Hdactech/stratum-pool.git"
+        "stratum-pool": "git://github.com/oddhome/stratum-pool.git"
     },
     "engines": {
         "node": ">=8.1.4"
