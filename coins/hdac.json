@@ -8,5 +8,8 @@
      * Add the 'reward' key value for ePoW, a unique consensus algorithm of Hdac.
      * This annotation should be removed when reflecting on the server due to the JSON formatting convention.
      */
-    "reward": "ePoW"
+    "reward": "ePoW",
+    "peerMagic": "f9beb4d9", //optional
+    "peerMagicTestnet": "0b110907",
+    "peerMagicRegtest": "fabfb5da"
 }
